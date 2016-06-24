@@ -167,7 +167,8 @@ $('a[data-toggle="tab"]').on('shown.bs.tab', function(e){
     var activeTab = $(e.target).text(); // Get the name of active tab
     var previousTab = $(e.relatedTarget).text(); // Get the name of previous tab
     alert(activeTab);
-    swiper2.update();
+    //swiper2.update();
+    swiper2.onResize():
 }); 
 
 /* jQuery('.swiper-container').each(function(){
