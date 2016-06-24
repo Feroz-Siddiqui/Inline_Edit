@@ -90,6 +90,9 @@ var swiper ;
 					</div>
 					<!-- Add Pagination -->
 					<div class="swiper-pagination swiper-pagination1"></div>
+					<!-- Add Arrows -->
+					<div class="swiper-button-next swiper-button-next1"></div>
+					<div class="swiper-button-prev swiper-button-prev1"></div>
 				</div>
 			</div>
 			<div id="profile" class="tab-pane fade">
@@ -109,6 +112,9 @@ var swiper ;
 					</div>
 					<!-- Add Pagination -->
 					<div class="swiper-pagination swiper-pagination2"></div>
+					<!-- Add Arrows -->
+					<div class="swiper-button-next swiper-button-next2"></div>
+					<div class="swiper-button-prev swiper-button-prev2"></div>
 				</div>
 
 			</div>
@@ -120,19 +126,41 @@ var swiper ;
 				<strong>Previous Tab</strong>: <span></span>
 			</p>
 		</div>
-		<script src="<%=baseURL%>js/swiper.min.js"></script>
+		<script src="<%=baseURL%>css/swiper.min.js"></script>
 
 		<script>
 
 var swiper1 = new Swiper('.swiper1', {
+	
+	initialSlide:0,
     pagination: '.swiper-pagination1',
     paginationClickable: true,
     spaceBetween: 30,
+    nextButton: '.swiper-button-next1',
+    prevButton: '.swiper-button-prev1',
+    /*continous swiping*/
+    loop:true,
+    onSlideNextStart : function(swiper) {
+    	alert('swiper1 next');
+    },onSlidePrevStart : function(swiper) {
+    	alert('swiper1 prev');	
+    }
 });
 var swiper2 = new Swiper('.swiper2', {
-    pagination: '.swiper-pagination2',
+	initialSlide:1,  
+	pagination: '.swiper-pagination2',
     paginationClickable: true,
     spaceBetween: 30,
+    nextButton: '.swiper-button-next2',
+    prevButton: '.swiper-button-prev2',
+    /*continous swiping*/
+    loop:true,
+    onSlideNextStart : function(swiper) {
+    	alert('swiper2 next');
+    },onSlidePrevStart : function(swiper) {
+    	alert('swiper2 prev');	
+    }
+    
 });
 
 $('a[data-toggle="tab"]').on('shown.bs.tab', function(e){
@@ -153,7 +181,5 @@ $('a[data-toggle="tab"]').on('shown.bs.tab', function(e){
 var swiper1= new Swiper('.bbbb');
  */
     </script>
-    
-    
 </body>
 </html>
