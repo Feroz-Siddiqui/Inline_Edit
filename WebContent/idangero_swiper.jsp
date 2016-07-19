@@ -140,9 +140,9 @@ var swiper1 = new Swiper('.swiper1', {
     prevButton: '.swiper-button-prev1',
     /*continous swiping*/
     loop:true,
-    onSlideNextStart : function(swiper) {
+    onSlideNextStart : function(swiper1) {
     	alert('swiper1 next');
-    },onSlidePrevStart : function(swiper) {
+    },onSlidePrevStart : function(swiper1) {
     	alert('swiper1 prev');	
     }
 });
@@ -155,9 +155,9 @@ var swiper2 = new Swiper('.swiper2', {
     prevButton: '.swiper-button-prev2',
     /*continous swiping*/
     loop:true,
-    onSlideNextStart : function(swiper) {
+    onSlideNextStart : function(swiper2) {
     	alert('swiper2 next');
-    },onSlidePrevStart : function(swiper) {
+    },onSlidePrevStart : function(swiper2) {
     	alert('swiper2 prev');	
     }
     
@@ -168,7 +168,13 @@ $('a[data-toggle="tab"]').on('shown.bs.tab', function(e){
     var previousTab = $(e.relatedTarget).text(); // Get the name of previous tab
     alert(activeTab);
     //swiper2.update();
-    swiper2.onResize():
+    if(activeTab=='Home'){
+    	swiper1.onResize();	
+    }else{
+    	 swiper2.onResize(); 	
+    }
+   
+    
 }); 
 
 /* jQuery('.swiper-container').each(function(){
